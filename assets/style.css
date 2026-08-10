@@ -1,0 +1,32 @@
+body {
+    box-sizing:border-box;
+    margin:0;
+    background-color:#D1D5DB;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.tarefas {
+    background-color:#FFFFFF;
+    border-radius: 5%;
+    height:auto;
+    width:auto;
+    padding:10px;
+    display:flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.botao {
+    background-color:#064E3B;
+    margin-top:10px;
+}
+
+
+#listaTarefas {
+    padding-left:0;
+}
