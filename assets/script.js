@@ -6,10 +6,19 @@ const lista = []
 
 function exibirTarefas () {
         listaTarefas.innerHTML = ""; 
-        lista.forEach(elemento => {
+        lista.forEach((elemento, indice) => {
             let tarefa = document.createElement('li')
             const botaoConcluir = document.createElement('button')
             const botaoExcluir = document.createElement('button')
+
+            botaoExcluir.addEventListener('click', (event) => {
+                removerTarefa(indice)
+                exibirTarefas()
+            }) 
+
+            botaoConcluir.addEventListener('click', (event) => {
+
+            })
             
             tarefa.innerText = ` ${elemento}`
             botaoConcluir.classList.add('botaoEstilizado');
@@ -27,6 +36,11 @@ function adicionarTarefa() {
         digitar.value = ""
     }
 }
+
+function removerTarefa(indice) {
+        lista.splice(indice, 1);
+}
+
 botaoAdicionar.addEventListener('click', (event) => {
     adicionarTarefa()
     exibirTarefas()
