@@ -11,13 +11,13 @@ function exibirTarefas () {
             const botaoConcluir = document.createElement('button')
             const botaoExcluir = document.createElement('button')
 
+            botaoConcluir.addEventListener('click', (event) => {
+                concluirTarefa(event, tarefa)
+            })
+
             botaoExcluir.addEventListener('click', (event) => {
                 removerTarefa(indice)
                 exibirTarefas()
-            }) 
-
-            botaoConcluir.addEventListener('click', (event) => {
-
             })
             
             tarefa.innerText = ` ${elemento}`
@@ -35,6 +35,10 @@ function adicionarTarefa() {
         lista.push(digitar.value.trim())
         digitar.value = ""
     }
+}
+
+function concluirTarefa(event, tarefa) {
+    tarefa.classList.toggle('desligado')
 }
 
 function removerTarefa(indice) {

@@ -31,6 +31,10 @@ body {
     padding-left:0;
 }
 
+.desligado {
+    text-decoration:line-through;
+}
+
 .botaoEstilizado{
     background-color: #064E3B;
     border-radius: 5px;
