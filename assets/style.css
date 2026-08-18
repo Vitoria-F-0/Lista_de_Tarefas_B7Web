@@ -24,11 +24,18 @@ body {
 .botao {
     background-color:#064E3B;
     margin-top:10px;
+    font-weight:bold;
 }
 
 
 #listaTarefas {
     padding-left:0;
+    list-style:none;
+}
+
+#listaTarefas li {
+    display:flex;
+    justify-content:space-between;
 }
 
 .desligado {
@@ -39,4 +46,7 @@ body {
     background-color: #064E3B;
     border-radius: 5px;
     padding:8px 10px;
+    margin-left: 10px;
+    font-weight:bold;
+
 }

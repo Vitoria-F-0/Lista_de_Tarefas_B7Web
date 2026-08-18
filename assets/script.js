@@ -1,4 +1,4 @@
-const digitar = document.getElementById('digitar')
+const digitar = document.getElementById ('digitar')
 const botaoAdicionar =  document.querySelector ('.botao')
 const listaTarefas = document.getElementById ('listaTarefas')
 
@@ -8,11 +8,18 @@ function exibirTarefas () {
         listaTarefas.innerHTML = ""; 
         lista.forEach((elemento, indice) => {
             let tarefa = document.createElement('li')
+            const textoTarefa = document.createElement('span')
+            tarefa.appendChild(textoTarefa)
+            const caixaBotao = document.createElement('div')
             const botaoConcluir = document.createElement('button')
+            botaoConcluir.innerText = 'Concluir'
             const botaoExcluir = document.createElement('button')
+            botaoExcluir.innerText = 'Excluir'
+            caixaBotao.appendChild(botaoConcluir)
+            caixaBotao.appendChild(botaoExcluir)
 
             botaoConcluir.addEventListener('click', (event) => {
-                concluirTarefa(event, tarefa)
+                concluirTarefa(event, textoTarefa)
             })
 
             botaoExcluir.addEventListener('click', (event) => {
@@ -20,11 +27,10 @@ function exibirTarefas () {
                 exibirTarefas()
             })
             
-            tarefa.innerText = ` ${elemento}`
+            textoTarefa.innerText = ` ${elemento}`
             botaoConcluir.classList.add('botaoEstilizado');
             botaoExcluir.classList.add('botaoEstilizado');
-            tarefa.appendChild(botaoConcluir)
-            tarefa.appendChild(botaoExcluir)
+            tarefa.appendChild(caixaBotao)
             listaTarefas.appendChild(tarefa)
     })
 
@@ -37,8 +43,8 @@ function adicionarTarefa() {
     }
 }
 
-function concluirTarefa(event, tarefa) {
-    tarefa.classList.toggle('desligado')
+function concluirTarefa(event, textoTarefa) {
+    textoTarefa.classList.toggle('desligado')
 }
 
 function removerTarefa(indice) {
